@@ -66,7 +66,6 @@ public class Philosopher implements Runnable {
     public void think() throws InterruptedException {
         System.out.println("Philosopher " + id + " is thinking!");
         Thread.sleep(timePhilosopherThinks);
-        amountOfEatenFood++;
     }
 
     public boolean AskAboutFolkAndTake(Folk folk) {
