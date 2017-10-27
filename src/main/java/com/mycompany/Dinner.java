@@ -1,13 +1,12 @@
-package notusingconcurrentpackage;
+package com.mycompany;
 
-import java.text.DecimalFormat;
 import java.util.Arrays;
 
-public class TesterNoConcurrentPackage {
+public class Dinner {
 
     static final int numberOfFolks = 5;
     static final int numberOfPhilosophers = 5;
-    static final int timeForDinner = 200000;
+    static final int timeForDinner = 2000;
     static final int timePhilosopherEats = 10;
     static final int timePhilosopherThinks = 10;
 
@@ -61,7 +60,7 @@ public class TesterNoConcurrentPackage {
 
 
         for (Philosopher philosopher : philosophers) {
-            String formattedDouble = String.format("%.2f", (double)philosopher.getAmountOfEatenFood()*100/foodWasEaten);
+            String formattedDouble = String.format("%.2f", (double) philosopher.getAmountOfEatenFood() * 100 / foodWasEaten);
             System.out.println("Philosopher " + philosopher.getId() + " ate " + formattedDouble + "%.");
         }
     }

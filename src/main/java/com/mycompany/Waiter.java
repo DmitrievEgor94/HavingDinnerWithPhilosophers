@@ -1,4 +1,4 @@
-package notusingconcurrentpackage;
+package com.mycompany;
 
 public class Waiter {
 
@@ -22,7 +22,7 @@ public class Waiter {
         numberOfFreeFolks--;
     }
 
-     synchronized void putFolkOnTable(Folk folk){
+    synchronized void putFolkOnTable(Folk folk) {
         folk.setFree(true);
         numberOfFreeFolks++;
     }

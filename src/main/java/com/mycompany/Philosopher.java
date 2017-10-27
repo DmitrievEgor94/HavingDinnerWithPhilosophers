@@ -1,4 +1,4 @@
-package notusingconcurrentpackage;
+package com.mycompany;
 
 public class Philosopher implements Runnable {
 
