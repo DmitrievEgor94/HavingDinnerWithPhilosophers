@@ -1,8 +1,12 @@
 package com.mycompany;
 
+//Критическая проблема.
+//Можно сделать решение и без этого класса (и класса Folk).
+//Сейчас оно пререусложнено в несколько раз.
 public class Waiter {
 
     private int numberOfFreeFolks;
+    //поле должно быть private final
     Folk[] folks;
 
     public Waiter(Folk[] folks) {
@@ -14,7 +18,7 @@ public class Waiter {
         if (folk.isFree() && numberOfFreeFolks != 1) {
             giveFolkToPhilosopher(folk);
             return true;
-        } else return false;
+        } else return false; //нарушение JCC - много операторов в одной строке + добавить {}
     }
 
     private void giveFolkToPhilosopher(Folk folk) {
