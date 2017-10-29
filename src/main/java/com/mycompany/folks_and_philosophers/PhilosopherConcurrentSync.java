@@ -68,6 +68,4 @@ public class PhilosopherConcurrentSync implements Runnable {
     static public void setNumberOfPhCanEatSimultaneously(int numberOfPhilosophersCanEat) {
         semPhilosophersCanEatSimultaneously = new Semaphore(numberOfPhilosophersCanEat, true);
     }
-
-
 }
