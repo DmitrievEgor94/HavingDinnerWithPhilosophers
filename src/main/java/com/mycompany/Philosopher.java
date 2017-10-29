@@ -48,6 +48,7 @@ public class Philosopher implements Runnable {
     }
 
 
+    //метод должен быть приватным
     void putFolk(Folk folk) {
         waiter.putFolkOnTable(folk);
     }
@@ -68,6 +69,7 @@ public class Philosopher implements Runnable {
         Thread.sleep(timePhilosopherThinks);
     }
 
+    //Нарушение JCC - название метода с большой буквы
     public boolean AskAboutFolkAndTake(Folk folk) {
         return waiter.checkFolkAndGiveToPhilosopher(folk);
     }

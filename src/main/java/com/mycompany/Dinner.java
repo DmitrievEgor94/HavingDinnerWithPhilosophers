@@ -3,7 +3,7 @@ package com.mycompany;
 import java.util.Arrays;
 
 public class Dinner {
-
+    //Все поля должны быть private
     static final int numberOfFolks = 5;
     static final int numberOfPhilosophers = 5;
     static final int timeForDinner = 2000;
@@ -34,6 +34,8 @@ public class Dinner {
             threads[i].start();
         }
 
+        //Нарушение code style - переменная объявлена слишком далеко от своего использования.
+        //Code smell - присвоенное значение переменной не используется
         int foodWasEaten = 0;
 
         try {

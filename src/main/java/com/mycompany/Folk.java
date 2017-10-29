@@ -1,5 +1,6 @@
 package com.mycompany;
 
+//Вилка пишется Fork.
 public class Folk {
 
     private boolean free = true;
