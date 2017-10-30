@@ -68,6 +68,4 @@ public class PhilosopherConcurrentSync implements Runnable {
     static public void setMaxNumberOfFreeForks(int maxNumberOfFreeForks) {
         semFreeForks = new Semaphore(maxNumberOfFreeForks-1, true);
     }
-
-
 }
