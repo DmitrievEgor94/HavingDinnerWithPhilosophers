@@ -13,7 +13,7 @@ public class PhilosopherConcurrentSync implements Runnable {
     private int timePhilosopherEats;
     private int timePhilosopherThinks;
 
-    private static Semaphore semPhilosophersCanEatSimultaneously;
+    private static Semaphore semFreeForks;
 
     public PhilosopherConcurrentSync(int id, Lock leftFork, Lock rightFork, int timePhilosopherEats, int timePhilosopherThinks) {
         this.id = id;
@@ -30,7 +30,7 @@ public class PhilosopherConcurrentSync implements Runnable {
     public void run() {
         while (true) {
             try {
-                semPhilosophersCanEatSimultaneously.acquire();
+                semFreeForks.acquire();
                 think();
                 leftFork.lock();
                 try {
@@ -43,7 +43,7 @@ public class PhilosopherConcurrentSync implements Runnable {
                 } finally {
                     leftFork.unlock();
                 }
-                semPhilosophersCanEatSimultaneously.release();
+                semFreeForks.release();
             } catch (InterruptedException e) {
                 return;
             }
@@ -65,8 +65,8 @@ public class PhilosopherConcurrentSync implements Runnable {
         Thread.sleep(timePhilosopherThinks);
     }
 
-    static public void setNumberOfPhCanEatSimultaneously(int numberOfPhilosophersCanEat) {
-        semPhilosophersCanEatSimultaneously = new Semaphore(numberOfPhilosophersCanEat, true);
+    static public void setMaxNumberOfFreeForks(int maxNumberOfFreeForks) {
+        semFreeForks = new Semaphore(maxNumberOfFreeForks-1, true);
     }
 
 

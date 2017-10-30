@@ -11,12 +11,12 @@ import java.util.concurrent.locks.ReentrantLock;
 public class DinnerConcurrentSync {
     private static final int NUMBER_OF_FORKS = 5;
     private static final int NUMBER_OF_PHILOSOPHERS = 5;
-    private static final int TIME_FOR_DINNER = 20000;
+    private static final int TIME_FOR_DINNER = 200000;
     private static final int TIME_PHILOSOPHER_EATS = 10;
     private static final int TIME_PHILOSOPHER_THINKS = 10;
 
     private static void testDinner() {
-        PhilosopherConcurrentSync.setNumberOfPhCanEatSimultaneously(NUMBER_OF_FORKS / 2);
+        PhilosopherConcurrentSync.setMaxNumberOfFreeForks(NUMBER_OF_FORKS );
 
         ExecutorService executor = Executors.newFixedThreadPool(NUMBER_OF_PHILOSOPHERS);
 
